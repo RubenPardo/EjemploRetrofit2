@@ -1,10 +1,12 @@
 package com.example.rparcas.ejemploretrofit2.di
 
+import com.example.rparcas.ejemploretrofit2.core.HeaderInterceptor
 import com.example.rparcas.ejemploretrofit2.data.network.DogApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -35,9 +37,15 @@ object NetworkModule {
             // endpoint a la API
             .baseUrl("https://dog.ceo/api/breed/")
             .addConverterFactory(GsonConverterFactory.create())
+            .client(getClient())
             .build()
     }
 
+    private fun getClient():OkHttpClient{
+        val client = OkHttpClient.Builder()
+            .addInterceptor(HeaderInterceptor())
+        return client.build()
+    }
 
     // De esta forma podemos proveer la api client para en vez de poner
     // el retrofit pongamos el api client
