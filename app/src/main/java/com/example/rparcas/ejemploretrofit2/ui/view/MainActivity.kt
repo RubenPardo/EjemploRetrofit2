@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rparcas.ejemploretrofit2.databinding.ActivityMainBinding
 import com.example.rparcas.ejemploretrofit2.ui.DogAdapter
 import com.example.rparcas.ejemploretrofit2.ui.viewmodel.DogsViewModel
-//import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint // PREPARAR LA CLASE PARA QUE PUEDA INYECTAR
+@AndroidEntryPoint // PREPARAR LA CLASE PARA QUE PUEDA INYECTAR
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener{
 
     private lateinit var binding: ActivityMainBinding

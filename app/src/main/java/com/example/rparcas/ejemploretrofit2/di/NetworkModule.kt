@@ -1,13 +1,13 @@
 package com.example.rparcas.ejemploretrofit2.di
 
 import com.example.rparcas.ejemploretrofit2.data.network.DogApiClient
-/*import dagger.Module
+import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent*/
+import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-//import javax.inject.Singleton
+import javax.inject.Singleton
 
 /**
  * Cuando no se puede inyectar una clase (cuando es una libreria o clase con interfaz)
@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * de librerias o depencias de clases que contienen interfaces
  * (CONTEXTO DEL DAGGER HILT)
  */
-/*@Module // Los modulos en dagger son los que proveen dependencias
+@Module // Los modulos en dagger son los que proveen dependencias
 @InstallIn(SingletonComponent::class) // Alcance del proveedor, es decir creara n instancias mientras esa este viva,
 // puede ser nivel de view model(ActivityRetainedScoped::class),
 // activity (ActivityScope::class) o
@@ -48,4 +48,4 @@ object NetworkModule {
         return retrofit.create(DogApiClient::class.java)
     }
 
-}*/
+}

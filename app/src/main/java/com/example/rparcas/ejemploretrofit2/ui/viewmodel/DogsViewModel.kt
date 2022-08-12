@@ -6,16 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rparcas.ejemploretrofit2.domain.DogsResponseItem
 import com.example.rparcas.ejemploretrofit2.domain.SearchDogsByNameUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 //import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
+
 //import javax.inject.Inject
 
-//@HiltViewModel
-class DogsViewModel /*@Inject constructor(
+@HiltViewModel
+class DogsViewModel @Inject constructor(
     private val searchDogsByNameUseCase: SearchDogsByNameUseCase
-)*/:ViewModel() {
-
-    private val searchDogsByNameUseCase = SearchDogsByNameUseCase()
+):ViewModel() {
 
     val isLoading = MutableLiveData<Boolean>()
     val dogsImages = MutableLiveData<List<String>>()
